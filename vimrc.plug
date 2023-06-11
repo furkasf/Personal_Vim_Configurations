@@ -1,0 +1,7 @@
+call plug#begin('~/.vim/plugged')
+
+Plug 'tpope/vim-commentary'
+Plug 'morhetz/gruvbox'
+Plug 'preservim/nerdtree'
+
+call plug#end()
