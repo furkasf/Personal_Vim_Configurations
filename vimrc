@@ -35,6 +35,7 @@ inoremap jj <Esc>
 
 if filereadable(expand('~/.vim/vimrc.plug'))
   source ~/.vim/vimrc.plug
+  source ~/.vim/lsp.vim
 endif
 
 "gruvbox configs
@@ -70,8 +71,23 @@ let g:gruvbox_diff_add = 'green'
 set background=dark
 
 " nerdtree configs
-
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
+
+" C# lsp server omnisharp configs
+
+let g:OmniSharp_server_stdio = 0
+
+let g:OmniSharp_selector_ui = 'fzf'
+
+inoremap <expr> <Tab> pumvisible() ? '<C-n>' : getline('.')[col('.')-2] =~# '[[:alnum:].-_#$]' ? '<C-x><C-o>' : '<Tab>'
+
+nnoremap <C-o><C-u> :OmniSharpFindUsages<CR>
+nnoremap <C-o><C-d> :OmniSharpGotoDefinition<CR>
+nnoremap <C-o><C-d><C-p> :OmniSharpPreviewDefinition<CR>
+nnoremap <C-o><C-r> :!dotnet run
+
+let g:OmniSharp_server_type = 'roslyn'
+let g:OmniSharp_prefer_global_sln = 1

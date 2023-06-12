@@ -3,5 +3,9 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-commentary'
 Plug 'morhetz/gruvbox'
 Plug 'preservim/nerdtree'
+" Plug 'OmniSharp/omnisharp-vim'
+" Plug 'prabirshrestha/vim-lsp'
+" Plug 'ryanoasis/vim-devicons'
+Plug 'junegunn/fzf'
 
 call plug#end()
